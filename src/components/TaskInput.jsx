@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './TaskInput.module.css';
+import './TaskInput.css';
 
 function TaskInput({ onAddTask }) {
   const [inputValue, setInputValue] = useState('');
@@ -19,18 +19,18 @@ function TaskInput({ onAddTask }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={styles.form}>
-      <div className={styles.inputContainer}>
+    <form onSubmit={handleSubmit} className="form">
+      <div className="inputContainer">
         <input
           type="text"
           value={inputValue}
           onChange={handleChange}
           placeholder="Add a new task..."
-          className={styles.input}
+          className="input"
         />
         <button
           type="submit"
-          className={styles.button}
+          className="button"
         >
           Add
         </button>

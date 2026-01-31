@@ -3,13 +3,14 @@ import TaskInput from './TaskInput';
 import TaskList from './TaskList';
 import TaskFilters from './TaskFilters';
 import { loadTasks, saveTasks } from '../utils/localStorage';
-import styles from './TaskApp.module.css';
+import { FilterType } from '../constants/filters';
+import './TaskApp.css';
 
 function TaskApp() {
   
   // Initialize tasks from localStorage so we don't overwrite with [] on first render
   const [tasks, setTasks] = useState(() => loadTasks());
-  const [filter, setFilter] = useState('all');
+  const [filter, setFilter] = useState(FilterType.ALL);
 
   // Save tasks to localStorage whenever tasks change
   useEffect(() => {
@@ -66,9 +67,9 @@ function TaskApp() {
   // Filter tasks based on current filter
   const getFilteredTasks = () => {
     switch (filter) {
-      case 'active':
+      case FilterType.ACTIVE:
         return tasks.filter((task) => !task.completed);
-      case 'completed':
+      case FilterType.COMPLETED:
         return tasks.filter((task) => task.completed);
       default:
         return tasks;
@@ -80,8 +81,8 @@ function TaskApp() {
   const hasCompletedTasks = tasks.some((task) => task.completed);
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>
+    <div className="container">
+      <h1 className="title">
         Task Manager
       </h1>
       

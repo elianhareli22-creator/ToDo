@@ -15,7 +15,7 @@
   background: #f1f5f9;
   padding: 0.5rem;
   border-radius: 12px;
-  width: fit-content;
+  width: 100%;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,6 +25,7 @@
 }
 
 .filterButton {
+  flex: 1;
   padding: 0.625rem 1.25rem;
   border-radius: 8px;
   border: none;
@@ -124,7 +125,6 @@
   }
 
   .filtersGroup {
-    width: 100%;
     justify-content: center;
   }
 

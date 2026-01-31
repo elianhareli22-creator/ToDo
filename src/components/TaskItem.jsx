@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './TaskItem.module.css';
+import './TaskItem.css';
 
 function TaskItem({ task, onToggle, onUpdate, onDelete }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -43,16 +43,16 @@ function TaskItem({ task, onToggle, onUpdate, onDelete }) {
   };
 
   return (
-    <li className={styles.taskItem}>
+    <li className="taskItem">
       <input
         type="checkbox"
         checked={task.completed}
         onChange={() => onToggle(task.id)}
-        className={styles.checkbox}
+        className="checkbox"
       />
       
       {isEditing ? (
-        <div className={styles.editContainer}>
+        <div className="editContainer">
           <input
             type="text"
             value={editValue}
@@ -60,17 +60,17 @@ function TaskItem({ task, onToggle, onUpdate, onDelete }) {
             onKeyDown={handleKeyDown}
             onBlur={handleSave}
             autoFocus
-            className={styles.editInput}
+            className="editInput"
           />
           <button
             onClick={handleSave}
-            className={`${styles.actionButton} ${styles.saveButton}`}
+            className="actionButton saveButton"
           >
             Save
           </button>
           <button
             onClick={handleCancel}
-            className={`${styles.actionButton} ${styles.cancelButton}`}
+            className="actionButton cancelButton"
           >
             Cancel
           </button>
@@ -79,21 +79,21 @@ function TaskItem({ task, onToggle, onUpdate, onDelete }) {
         <>
           <span
             onClick={handleEdit}
-            className={`${styles.taskText} ${
-              task.completed ? styles.taskTextCompleted : ''
+            className={`taskText ${
+              task.completed ? 'taskTextCompleted' : ''
             }`}
           >
             {task.text}
           </span>
           <button
             onClick={handleEdit}
-            className={styles.editButton}
+            className="editButton"
           >
             Edit
           </button>
           <button
             onClick={handleDelete}
-            className={styles.deleteButton}
+            className="deleteButton"
           >
             Delete
           </button>
