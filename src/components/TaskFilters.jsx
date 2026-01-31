@@ -35,7 +35,7 @@ function TaskFilters({ currentFilter, onFilterChange, activeTaskCount, onClearCo
               onClick={onClearCompleted}
               className={styles.clearButton}
             >
-              Clear Completed
+              Delete all completed
             </button>
           )}
         </div>
