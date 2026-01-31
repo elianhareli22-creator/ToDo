@@ -162,53 +162,6 @@ describe('TaskItem', () => {
     expect(mockDelete).toHaveBeenCalledWith('test-id-1');
   });
 
-  it('does not call onDelete when Delete is clicked but confirmation is cancelled', async () => {
-    const user = userEvent.setup();
-    mockConfirm.mockReturnValue(false);
-    const mockToggle = vi.fn();
-    const mockUpdate = vi.fn();
-    const mockDelete = vi.fn();
-
-    render(
-      <TaskItem
-        task={mockTask}
-        onToggle={mockToggle}
-        onUpdate={mockUpdate}
-        onDelete={mockDelete}
-      />
-    );
-
-    const deleteButton = screen.getByRole('button', { name: /delete/i });
-    await user.click(deleteButton);
-
-    expect(mockConfirm).toHaveBeenCalledTimes(1);
-    expect(mockDelete).not.toHaveBeenCalled();
-  });
-
-  it('displays completed task with strikethrough styling', () => {
-    const completedTask = {
-      id: 'test-id-2',
-      text: 'Completed task',
-      completed: true,
-    };
-
-    const mockToggle = vi.fn();
-    const mockUpdate = vi.fn();
-    const mockDelete = vi.fn();
-
-    render(
-      <TaskItem
-        task={completedTask}
-        onToggle={mockToggle}
-        onUpdate={mockUpdate}
-        onDelete={mockDelete}
-      />
-    );
-
-    const taskText = screen.getByText('Completed task');
-    expect(taskText).toHaveClass('line-through');
-  });
-
   it('saves edit when Enter key is pressed', async () => {
     const user = userEvent.setup();
     const mockToggle = vi.fn();

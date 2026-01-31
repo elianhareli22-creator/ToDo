@@ -2,7 +2,7 @@
 
 A modern, feature-rich Task Manager application built with React 19 and Vite. This application demonstrates component-based architecture, state management with React Hooks, localStorage persistence, and comprehensive unit testing.
 
-## 🚀 Features
+## Features
 
 - **Task Management**: Add, edit, toggle completion, and delete tasks
 - **Filtering**: View all tasks, active tasks, or completed tasks
@@ -12,7 +12,7 @@ A modern, feature-rich Task Manager application built with React 19 and Vite. Th
 - **Modern UI**: Beautiful, responsive design with native CSS and CSS Modules
 - **Accessibility**: Proper focus states and keyboard navigation
 
-## 🛠 Technology Stack
+## Technology Stack
 
 - **React 19**: Latest React with functional components and hooks
 - **Vite**: Fast build tool and development server
@@ -20,7 +20,7 @@ A modern, feature-rich Task Manager application built with React 19 and Vite. Th
 - **Vitest**: Fast unit test framework
 - **React Testing Library**: Testing utilities for React components
 
-## 📦 Installation
+##  Installation
 
 1. Clone or download this repository
 2. Navigate to the project directory:

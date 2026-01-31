@@ -34,6 +34,9 @@ function TaskItem({ task, onToggle, onUpdate, onDelete }) {
   };
 
   const handleDelete = () => {
+    // #region agent log
+    fetch('http://127.0.0.1:7243/ingest/132e220e-9b56-43ec-941c-97e6e29d6314',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'TaskItem.jsx:handleDelete-entry',message:'handleDelete invoked',data:{taskId:task.id},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'H2-H3'})}).catch(()=>{});
+    // #endregion
     if (window.confirm('Are you sure you want to delete this task?')) {
       onDelete(task.id);
     }
