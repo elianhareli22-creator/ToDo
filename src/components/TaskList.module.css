@@ -1,0 +1,30 @@
+.container {
+  width: 100%;
+}
+
+.emptyState {
+  width: 100%;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.emptyStateText {
+  color: #94a3b8;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+@media (prefers-color-scheme: dark) {
+  .emptyStateText {
+    color: #64748b;
+  }
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}

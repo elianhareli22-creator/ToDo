@@ -1,0 +1,273 @@
+.taskItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 2px solid #f1f5f9;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.taskItem:hover {
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .taskItem {
+    background: #1e293b;
+    border-color: #334155;
+  }
+
+  .taskItem:hover {
+    border-color: #475569;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.checkbox {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  accent-color: #667eea;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.checkbox:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.taskText {
+  flex: 1;
+  cursor: pointer;
+  color: #1e293b;
+  font-size: 1rem;
+  line-height: 1.5;
+  word-break: break-word;
+  transition: color 0.2s ease;
+}
+
+.taskText:hover {
+  color: #667eea;
+}
+
+.taskTextCompleted {
+  text-decoration: line-through;
+  color: #94a3b8;
+  opacity: 0.7;
+}
+
+.taskTextCompleted:hover {
+  color: #94a3b8;
+}
+
+@media (prefers-color-scheme: dark) {
+  .taskText {
+    color: #f1f5f9;
+  }
+
+  .taskText:hover {
+    color: #818cf8;
+  }
+
+  .taskTextCompleted {
+    color: #64748b;
+  }
+
+  .taskTextCompleted:hover {
+    color: #64748b;
+  }
+}
+
+.editContainer {
+  flex: 1;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.editInput {
+  flex: 1;
+  padding: 0.625rem 0.875rem;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #ffffff;
+  color: #1e293b;
+}
+
+.editInput:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .editInput {
+    background: #334155;
+    color: #f1f5f9;
+    border-color: #818cf8;
+  }
+
+  .editInput:focus {
+    box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.2);
+  }
+}
+
+.actionButton {
+  padding: 0.625rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.saveButton {
+  background: #10b981;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.saveButton:hover {
+  background: #059669;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.saveButton:active {
+  transform: translateY(0);
+}
+
+.saveButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+}
+
+.cancelButton {
+  background: #64748b;
+  color: #ffffff;
+}
+
+.cancelButton:hover {
+  background: #475569;
+  transform: translateY(-1px);
+}
+
+.cancelButton:active {
+  transform: translateY(0);
+}
+
+.cancelButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(100, 116, 139, 0.3);
+}
+
+.editButton {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 2px solid #e2e8f0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #667eea;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.editButton:hover {
+  background: #667eea;
+  color: #ffffff;
+  border-color: #667eea;
+  transform: translateY(-1px);
+}
+
+.editButton:active {
+  transform: translateY(0);
+}
+
+.editButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  .editButton {
+    border-color: #475569;
+    color: #818cf8;
+  }
+
+  .editButton:hover {
+    background: #818cf8;
+    color: #1e293b;
+    border-color: #818cf8;
+  }
+}
+
+.deleteButton {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 2px solid #fee2e2;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ef4444;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.deleteButton:hover {
+  background: #ef4444;
+  color: #ffffff;
+  border-color: #ef4444;
+  transform: translateY(-1px);
+}
+
+.deleteButton:active {
+  transform: translateY(0);
+}
+
+.deleteButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  .deleteButton {
+    border-color: #7f1d1d;
+    color: #f87171;
+  }
+
+  .deleteButton:hover {
+    background: #ef4444;
+    color: #ffffff;
+    border-color: #ef4444;
+  }
+}
+
+@media (max-width: 640px) {
+  .taskItem {
+    padding: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .editContainer {
+    width: 100%;
+    order: 3;
+  }
+
+  .editButton,
+  .deleteButton {
+    flex: 1;
+  }
+}

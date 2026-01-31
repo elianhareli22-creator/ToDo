@@ -1,0 +1,139 @@
+.container {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.filtersContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.filtersGroup {
+  display: flex;
+  gap: 0.5rem;
+  background: #f1f5f9;
+  padding: 0.5rem;
+  border-radius: 12px;
+  width: fit-content;
+}
+
+@media (prefers-color-scheme: dark) {
+  .filtersGroup {
+    background: #334155;
+  }
+}
+
+.filterButton {
+  padding: 0.625rem 1.25rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  background: transparent;
+  color: #64748b;
+}
+
+.filterButton:hover {
+  color: #475569;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.filterButtonActive {
+  background: #ffffff;
+  color: #667eea;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+  .filterButton {
+    color: #94a3b8;
+  }
+
+  .filterButton:hover {
+    color: #cbd5e1;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .filterButtonActive {
+    background: #475569;
+    color: #818cf8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.filterButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.3);
+}
+
+.infoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.taskCount {
+  font-size: 0.9375rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+@media (prefers-color-scheme: dark) {
+  .taskCount {
+    color: #94a3b8;
+  }
+}
+
+.clearButton {
+  padding: 0.625rem 1.25rem;
+  background: #ef4444;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+
+.clearButton:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+.clearButton:active {
+  transform: translateY(0);
+}
+
+.clearButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.3);
+}
+
+@media (max-width: 640px) {
+  .filtersContainer {
+    gap: 1rem;
+  }
+
+  .filtersGroup {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .infoContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .clearButton {
+    width: 100%;
+  }
+}
