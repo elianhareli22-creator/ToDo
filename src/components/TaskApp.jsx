@@ -6,6 +6,7 @@ import { loadTasks, saveTasks } from '../utils/localStorage';
 import styles from './TaskApp.module.css';
 
 function TaskApp() {
+  
   // Initialize tasks from localStorage so we don't overwrite with [] on first render
   const [tasks, setTasks] = useState(() => loadTasks());
   const [filter, setFilter] = useState('all');
@@ -15,22 +16,18 @@ function TaskApp() {
     saveTasks(tasks);
   }, [tasks]);
 
-  // Generate unique ID for new tasks
-  const generateId = () => {
-    if (typeof crypto !== 'undefined' && crypto.randomUUID) {
-      return crypto.randomUUID();
-    }
-    return `task-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
-  };
-
   // Add a new task
   const handleAddTask = (text) => {
-    const newTask = {
-      id: generateId(),
-      text: text,
-      completed: false,
-    };
-    setTasks((prevTasks) => [...prevTasks, newTask]);
+    setTasks((prevTasks) => {
+      const numericIds = prevTasks.map((t) => Number(t.id)).filter((n) => !Number.isNaN(n));
+      const nextId = 1 + (numericIds.length ? Math.max(...numericIds) : 0);
+      const newTask = {
+        id: nextId,
+        text: text,
+        completed: false,
+      };
+      return [...prevTasks, newTask];
+    });
   };
 
   // Toggle task completion status
