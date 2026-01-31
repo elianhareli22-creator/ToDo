@@ -33,7 +33,7 @@ A modern, feature-rich Task Manager application built with React 19 and Vite. Th
    npm install
    ```
 
-## 🏃 Running the Application
+## Running the Application
 
 ### Development Mode
 
@@ -58,7 +58,7 @@ Preview the production build locally:
 npm run preview
 ```
 
-## 🧪 Running Tests
+## Running Tests
 
 Run the unit tests:
 ```bash
@@ -71,7 +71,7 @@ The test suite includes comprehensive tests for `TaskInput` and `TaskItem` compo
 - Input validation
 - Edge cases
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 /Users/adinizri/ToDo Task/
@@ -108,7 +108,7 @@ The test suite includes comprehensive tests for `TaskInput` and `TaskItem` compo
 └── public/
 ```
 
-## 🧩 Component Responsibilities
+## Component Responsibilities
 
 ### TaskApp
 - **Purpose**: Main container component managing global application state
@@ -160,7 +160,7 @@ The test suite includes comprehensive tests for `TaskInput` and `TaskItem` compo
   - `saveTasks(tasks)`: Saves tasks array to localStorage
   - Handles errors gracefully, returns empty array on failure
 
-## 🔄 Data Flow
+## Data Flow
 
 ```
 TaskApp (State Container)
@@ -172,7 +172,7 @@ TaskApp (State Container)
 
 All state changes flow upward to `TaskApp`, which updates localStorage and re-renders child components with new data.
 
-## 🎨 Styling
+## Styling
 
 The application uses native CSS with CSS Modules for styling, providing:
 - Component-scoped styles using CSS Modules
@@ -182,7 +182,7 @@ The application uses native CSS with CSS Modules for styling, providing:
 - Accessible focus states
 - Modern, clean UI design
 
-## 📝 Key Features Implementation
+## Key Features Implementation
 
 ### Unique Task IDs
 Tasks are assigned unique IDs using `crypto.randomUUID()` with a fallback to timestamp-based IDs for compatibility.
@@ -204,7 +204,7 @@ Tasks can be edited by clicking the "Edit" button or clicking directly on the ta
 - Cancel on Escape key or Cancel button
 - Auto-save on blur
 
-## 🧪 Testing
+## Testing
 
 The application includes comprehensive unit tests using Vitest and React Testing Library:
 
@@ -213,11 +213,11 @@ The application includes comprehensive unit tests using Vitest and React Testing
 
 Run tests with `npm test`.
 
-## 📄 License
+## License
 
 This project is created for educational purposes as a university assignment.
 
-## 👨‍💻 Development Notes
+## Development Notes
 
 - Uses only React Hooks (`useState`, `useEffect`) for state management
 - No external routing libraries (single-page application)
